@@ -7,12 +7,15 @@ const ingredients = [
   "Condiments",
 ];
 
-const ulIngredients = document.getElementById("ingredients");
+const ul = document.getElementById("ingredients");
 
-// Створюємо та додаємо кожен елемент <li> до списку
+const fragment = document.createDocumentFragment();
+
 ingredients.forEach((ingredient) => {
   const li = document.createElement("li");
-  li.textContent = ingredient;
-  li.classList.add("item");
-  ulIngredients.appendChild(li);
+  li.textContent = ingredient; 
+  li.classList.add("item"); 
+  fragment.appendChild(li); 
 });
+
+ul.appendChild(fragment);
